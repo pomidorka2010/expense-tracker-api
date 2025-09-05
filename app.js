@@ -11,7 +11,7 @@ app.use(express.json());
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error('MongoDB connection error:', err));
+  .catch(err => console.error('MongoDB connection error occurred while trying to connect:', err));
 
 // Use routes
 app.use('/api/users', userRoutes);
