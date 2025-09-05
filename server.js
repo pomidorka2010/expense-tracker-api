@@ -12,7 +12,7 @@ app.use(express.json());
 
 // Connect to MongoDB
 const mongoDBUri = process.env.MONGODB_URI; // Refactored variable name
-mongoose.connect(mongoDBUri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(mongoDBUri, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
   .then(() => console.log('MongoDB connected'))
   .catch(err => {
     console.error('MongoDB connection error:', err);
